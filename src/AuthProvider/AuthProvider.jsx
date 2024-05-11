@@ -27,6 +27,7 @@ function AuthProvider({ children }) {
 
 
   const createUser = (email, password) => {
+    setLoader(false)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -38,7 +39,7 @@ function AuthProvider({ children }) {
   };
 
   const updatedProfile = (name, photo) => {
-    console.log(name, photo);
+    
     return updateProfile(
       auth.currentUser,
 

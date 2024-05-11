@@ -35,7 +35,7 @@ function FeatureCard() {
 
             <div className="flex justify-end items-center ">
               <Link
-                to={'/details'}
+                to={'/Details'}
                 class="mx-6 hover:text-lime-600   text-gray-600  p-3 rounded-full outline
             outline-lime-600 "
               >
