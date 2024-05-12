@@ -16,7 +16,7 @@ function AllAssignment() {
     },
   });
 
-  if(isLoading)return <div>tanstack loading........bom</div>
+  if(!data)return <div>ekhane data nai ....</div>
 
  
   return (

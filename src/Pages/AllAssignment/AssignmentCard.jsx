@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2'
+import { ContextAPI } from '../../AuthProvider/AuthProvider';
 function AssignmentCard({ item, refetch }) {
+  const {user} = useContext(ContextAPI)
   const AxiosSecure = useAxiosSecure()
   const handleDelete = id => {
     
@@ -22,16 +24,33 @@ Swal.fire({
 
   if (result.isConfirmed) {
 
- AxiosSecure.delete(`/delete?id=${id}`).then(res => {
-  
-   refetch();
- });
+    AxiosSecure.delete(`/delete?id=${id}&email=${user?.email}`)
+      .then(res => {
 
-    Swal.fire({
-      title: 'Deleted!',
-      text: 'Your file has been deleted.',
-      icon: 'success',
-    });
+        if (res.data?.deletedCount > 0) {
+           Swal.fire({
+             title: 'Deleted!',
+             text: 'Your file has been deleted.',
+             icon: 'success',
+           });
+          refetch();
+        } 
+
+        else {
+         
+        Swal.fire({
+          title: 'Unauthorized!',
+          text: 'You can not delete it',
+          icon: 'error',
+        }
+      );
+        }
+       
+      })
+      
+    
+
+    
   }
 });
 
@@ -86,7 +105,7 @@ Swal.fire({
               Delete
             </div>
             <Link
-              to={'/Update'}
+              to={`/Update/${item?._id}`}
               class="btn btn-outline rounded-full cursor-pointer btn-success "
             >
               Update

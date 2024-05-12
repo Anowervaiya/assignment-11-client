@@ -1,7 +1,7 @@
 import React from 'react'
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function Details() {
   const AxiosSecure = useAxiosSecure()
@@ -19,12 +19,12 @@ function Details() {
   
   
   if(isLoading) return <p>loddingg details....</p>
-console.log(data);
+
   return (
     <div className='container mx-auto'>
       {data.map(item => {
         return (
-          <div className="card  lg:h-[400px] lg:card-side bg-base-100 shadow-xl">
+          <div className="card  lg:h-[400px] lg:card-side bg-base-100 border p-6 shadow-xl">
             <figure>
               <img
                 src={item?.thumbnail}
@@ -39,11 +39,14 @@ console.log(data);
               <p>Difficulty : {item?.difficulty}</p>
               <p>Total Marks : {item?.Marks}</p>
               <p>Posted Date : {item?.startDate}</p>
-            
+
               <div className="card-actions justify-start ">
-                <button className="btn btn-outline btn-success">
+                <Link
+                  to={'/TakeAssignment'}
+                  className="btn btn-outline btn-success"
+                >
                   Take Assignment
-                </button>
+                </Link>
               </div>
             </div>
           </div>

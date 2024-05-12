@@ -17,8 +17,6 @@ const Navbar = props => {
   
   
 
- 
-
     const list = (
       <>
         {' '}

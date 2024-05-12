@@ -5,7 +5,6 @@ import { ContextAPI } from '../AuthProvider/AuthProvider';
 
 function Main() {
   const { loader } = useContext(ContextAPI)
-  if (loader)return <div>loddinnggg........</div>
     return (
       <>
         <Navbar></Navbar>

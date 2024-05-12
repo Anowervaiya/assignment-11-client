@@ -3,9 +3,9 @@ import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-import axios from 'axios';
+
 import { useContext } from 'react';
-import Swal from 'sweetalert2';
+
 
 import './style.css'
 import toast from 'react-hot-toast'
@@ -15,6 +15,8 @@ function CreateAssingmentMain() {
   const AxiosSecure= useAxiosSecure()
   const [difficulty , setDifficulty]= useState('Low')
   const [startDate, setStartDate] = useState(new Date());
+
+
   const { user } = useContext(ContextAPI)
   const handleAddAssignment = event => {
    
@@ -32,13 +34,7 @@ function CreateAssingmentMain() {
     const UserPhoto = user?.photoURL;
 
 
-    // **
-    // https://i.ibb.co/1TKJy35/download.jpg
-    // https://i.ibb.co/dB6VtJ5/download.jpg
-    // https://i.ibb.co/WFGhPm2/download.jpg
-    // https://i.ibb.co/b7Mp63G/download.jpg
-    // *
-
+    
     const newAssignment = {
       name,
       startDate,
@@ -85,7 +81,7 @@ function CreateAssingmentMain() {
     //     alert('oopps!');
     //   });
   };
-;
+
   
 
   const handleDifficulty = e => {

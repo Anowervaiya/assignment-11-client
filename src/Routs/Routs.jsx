@@ -6,6 +6,8 @@ import Details from "../Pages/Details/Details";
 import CreateAssingmentMain from "../Pages/CreateAssignMain/CreateAssingmentMain";
 import LogIn from "../Pages/LogIn/LogIn";
 import AllAssignment from "../Pages/AllAssignment/AllAssignment";
+import TakeAssignment from "../Pages/TakeAssignment/TakeAssignment";
+import Update from "../Pages/Update/Update";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +38,15 @@ const router = createBrowserRouter([
       {
         path: '/AllAssignment',
         element:<AllAssignment></AllAssignment>
-     }
+      },
+      {
+        path: '/TakeAssignment',
+        element:<TakeAssignment></TakeAssignment>
+      },
+      {
+        path: '/Update/:id',
+        element:<Update></Update>
+      }
     ]
   },
 ]);

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FeatureCard from './FeatureCard';
 
 import { useQuery } from '@tanstack/react-query';
@@ -6,18 +6,17 @@ import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 
 
 function Features() {
-   const AxiosSecure = useAxiosSecure();
+  const AxiosSecure = useAxiosSecure();
+  const [data,setData]= useState(null)
 
-   const { data, error, isLoading, refetch } = useQuery({
-     queryKey: ['allassignment'],
-     queryFn: async () => {
-       const result = await AxiosSecure.get('/allassignment');
-
-       return result.data;
-     },
-   });
+  useEffect(() => {
+    AxiosSecure.get('/allassignment').then(res => {
+      setData(res.data);
+    });
+  }, [])
+  console.log(data);
   
-  
+  if(!data) return <div>feature e data nai</div>
 
   return (
     <div className="my-24">
