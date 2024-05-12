@@ -7,22 +7,30 @@ import axios from 'axios';
 import { useContext } from 'react';
 import Swal from 'sweetalert2';
 
-import  './style.css'
+import './style.css'
+import toast from 'react-hot-toast'
+import { ContextAPI } from '../../AuthProvider/AuthProvider';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 function CreateAssingmentMain() {
-    const [startDate, setStartDate] = useState(new Date());
+  const AxiosSecure= useAxiosSecure()
+  const [difficulty , setDifficulty]= useState('Low')
+  const [startDate, setStartDate] = useState(new Date());
+  const { user } = useContext(ContextAPI)
   const handleAddAssignment = event => {
-    console.log('aice');
+   
     event.preventDefault();
 
     const form = event.target;
 
     const name = form.Title.value;
-    const TotalVisitors = form.TotalVisitors.value;
     const description = form.description.value;
+    
+    const Marks = form.Marks.value;
+    const thumbnail = form.Photo.value;
+    const UserName = user?.displayName;
+    const UserEmail = user?.email;
+    const UserPhoto = user?.photoURL;
 
-    const photo = form.Photo.value;
-
-    const User_Name = form.User_Name.value;
 
     // **
     // https://i.ibb.co/1TKJy35/download.jpg
@@ -31,19 +39,25 @@ function CreateAssingmentMain() {
     // https://i.ibb.co/b7Mp63G/download.jpg
     // *
 
-    const newTourist_Spot = {
+    const newAssignment = {
       name,
-      TotalVisitors,
-      Email,
-      average_cost,
-      User_Name,
-      country_Name,
-      seasonality,
-      travel_time,
+      startDate,
+      thumbnail,
+      UserName,
+      UserEmail,
+      UserPhoto,
+      Marks,
       description,
-      location,
-      photo,
+      difficulty,
     };
+    AxiosSecure.post('/assignment', { newAssignment })
+      .then(res => {
+        if (res.data.acknowledged == true) {
+          toast.success('Assignment Added')
+          form.reset()
+        }
+    })
+    
 
     // send data to the server
 
@@ -71,11 +85,11 @@ function CreateAssingmentMain() {
     //     alert('oopps!');
     //   });
   };
-
+;
   
 
   const handleDifficulty = e => {
-    console.log(e.target.value);
+    setDifficulty(e.target.value);
   };
 
   return (
@@ -122,6 +136,7 @@ function CreateAssingmentMain() {
               name="dropdown"
               className="w-full focus:outline-2 focus:outline-gray-300 h-[50px] px-4 rounded-lg border border-gray-300"
               onChange={handleDifficulty}
+              
               id=""
             >
               <option value="Low">Low</option>
@@ -149,7 +164,7 @@ function CreateAssingmentMain() {
             </label>
             <label className="input-group">
               <input
-                type="text"
+                type="number"
                 name="Marks"
                 placeholder="Marks"
                 className="input input-bordered w-full"

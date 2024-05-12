@@ -26,7 +26,7 @@ const Navbar = props => {
           <NavLink to={'/'}>Home</NavLink>
         </li>
         <li>
-          <NavLink to={'/Assignment'}>Assignment</NavLink>
+          <NavLink to={'/AllAssignment'}>Assignment</NavLink>
         </li>
         {user && (
           <li>

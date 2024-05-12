@@ -36,7 +36,6 @@ e.preventDefault()
       });
     
  
-    navigate('/')
 }
 
   return (

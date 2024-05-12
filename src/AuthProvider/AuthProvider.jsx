@@ -27,12 +27,14 @@ function AuthProvider({ children }) {
 
 
   const createUser = (email, password) => {
-    setLoader(false)
+    setLoader(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const SingInUser = (email, password) => {
+  setLoader(true)
     return signInWithEmailAndPassword(auth, email, password);
+    
   };
   const signInOut = () => {
     return signOut(auth);
