@@ -1,21 +1,53 @@
 import React from 'react'
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
+import { useParams } from 'react-router-dom';
 
 function Details() {
+  const AxiosSecure = useAxiosSecure()
+  const { id } = useParams()
+
+    const { data, error, isLoading, refetch } = useQuery({
+      queryKey: ['Details'],
+      queryFn: async () => {
+        const result = await AxiosSecure.get(`/details?id=${id}`);
+
+        return result.data;
+      },
+    });
+  
+  
+  
+  if(isLoading) return <p>loddingg details....</p>
+console.log(data);
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg"
-          alt="Album"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">New album is released!</h2>
-        <p>Click the button to listen on Spotiwhy app.</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Listen</button>
-        </div>
-      </div>
+    <div className='container mx-auto'>
+      {data.map(item => {
+        return (
+          <div className="card  lg:h-[400px] lg:card-side bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src={item?.thumbnail}
+                alt="Album"
+                className="w-full h-full"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{item?.name}</h2>
+              <p>Posted By : {item?.UserName}</p>
+              <p>Posted Email : {item?.UserEmail}</p>
+              <p>Difficulty : {item?.difficulty}</p>
+              <p>Total Marks : {item?.Marks}</p>
+              <p>Posted Date : {item?.startDate}</p>
+            
+              <div className="card-actions justify-start ">
+                <button className="btn btn-outline btn-success">
+                  Take Assignment
+                </button>
+              </div>
+            </div>
+          </div>
+        );})}
     </div>
   );
 }
