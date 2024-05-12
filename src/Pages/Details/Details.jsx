@@ -2,6 +2,7 @@ import React from 'react'
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { Link, useParams } from 'react-router-dom';
+import moment from 'moment';
 
 function Details() {
   const AxiosSecure = useAxiosSecure()
@@ -38,7 +39,7 @@ function Details() {
               <p>Posted Email : {item?.UserEmail}</p>
               <p>Difficulty : {item?.difficulty}</p>
               <p>Total Marks : {item?.Marks}</p>
-              <p>Posted Date : {item?.startDate}</p>
+              <p>Posted Date : {moment(item?.startDate).format('DD/MM/YYYY')}</p>
 
               <div className="card-actions justify-start ">
                 <Link
