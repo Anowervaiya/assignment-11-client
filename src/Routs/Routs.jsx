@@ -8,6 +8,9 @@ import LogIn from "../Pages/LogIn/LogIn";
 import AllAssignment from "../Pages/AllAssignment/AllAssignment";
 import TakeAssignment from "../Pages/TakeAssignment/TakeAssignment";
 import Update from "../Pages/Update/Update";
+import Pending from "../Pages/Pending/Pending";
+import Attempt from "../Pages/Attempt/Attempt";
+
 
 const router = createBrowserRouter([
   {
@@ -16,38 +19,46 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element:<HomeMain></HomeMain>
+        element: <HomeMain></HomeMain>,
       },
       {
         path: '/Registration',
-        element:<Registration></Registration>
+        element: <Registration></Registration>,
       },
       {
         path: '/LogIn',
-        element:<LogIn></LogIn>
+        element: <LogIn></LogIn>,
       },
       {
         path: '/Details/:id',
         element: <Details></Details>,
-       
       },
       {
         path: '/CreateAssignment',
-        element:<CreateAssingmentMain></CreateAssingmentMain>
+        element: <CreateAssingmentMain></CreateAssingmentMain>,
       },
       {
         path: '/AllAssignment',
-        element:<AllAssignment></AllAssignment>
+        element: <AllAssignment></AllAssignment>,
       },
       {
-        path: '/TakeAssignment',
-        element:<TakeAssignment></TakeAssignment>
+        path: '/TakeAssignment/:id',
+        element: <TakeAssignment></TakeAssignment>,
+      
       },
       {
         path: '/Update/:id',
-        element:<Update></Update>
+        element: <Update></Update>,
+      },
+      {
+        path: '/pending',
+        element:<Pending></Pending>
+      },
+      {
+        path: '/attempt',
+        element:<Attempt></Attempt>
       }
-    ]
+    ],
   },
 ]);
 export default router;

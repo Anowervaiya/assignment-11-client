@@ -14,7 +14,6 @@ function Features() {
       setData(res.data);
     });
   }, [])
-  console.log(data);
   
   if(!data) return <div>feature e data nai</div>
 

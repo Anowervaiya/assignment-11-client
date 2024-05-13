@@ -55,31 +55,6 @@ function CreateAssingmentMain() {
     })
     
 
-    // send data to the server
-
-    // fetch('https://tourism-a-10-server.vercel.app/tour', {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(newTourist_Spot),
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     console.log(data);
-    //     if (data.insertedId) {
-    //       Swal.fire({
-    //         title: 'Success!',
-    //         text: 'Tourist_Spot Added Successfully',
-    //         icon: 'success',
-    //         confirmButtonText: 'Cool',
-    //       });
-    //       form.reset();
-    //     }
-    //   })
-    //   .catch(err => {
-    //     alert('oopps!');
-    //   });
   };
 
   

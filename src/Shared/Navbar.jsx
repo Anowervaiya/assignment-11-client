@@ -33,7 +33,7 @@ const Navbar = props => {
         )}
         {user && (
           <li>
-            <NavLink to={'/Pending_Assignment'}>Pending Assignment </NavLink>{' '}
+            <NavLink to={'/pending'}>Pending Assignment </NavLink>{' '}
           </li>
         )}
         <li>{<NavLink to={'/about'}>About Us</NavLink>}</li>
@@ -96,7 +96,7 @@ const Navbar = props => {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link>My Attempt Assignment</Link>
+                  <Link to={'/attempt'}>My Attempt Assignment</Link>
                 </li>
                 <li>
                   <div onClick={signInOut}>Logout</div>

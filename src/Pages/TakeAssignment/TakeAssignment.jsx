@@ -1,21 +1,43 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ContextAPI } from '../../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast'
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 function TakeAssignment() {
   const { user } = useContext(ContextAPI)
+  const [data,setData]= useState(null)
   const AxiosSecure = useAxiosSecure()
-  console.log(user);
+
+
+
+
+  const { id } = useParams()
+  
+  useEffect(() => {
+    AxiosSecure.get(`/details?id=${id}`)
+      .then(res => {
+      setData(res.data);
+    })
+  }, [])
+  
+
+ if (!data) return <div>loading from take assignment .......</div>;
+ const [datas] = data;
+ 
   const handleAssignment = (e) => {
     e.preventDefault()
     const form = e.target;
+    const PosterEmail = datas.UserEmail;
+    const AssignmentName = datas.name;
+  
     const File = form.file.value;
     const UserEmail = user?.email;
     const UserName = user?.displayName;
+    const UserPhoto = user?.photoURL
     const note = form.note.value;
-    const status = 'pending'
-    const submit = { File, note, UserEmail, UserName, status };
+    const status = 'pending';
+    const submit = { File, note, PosterEmail,AssignmentName,UserPhoto, UserEmail, UserName, status };
     if (!File || !note) {
       return toast.error('Please Choose a file')
     }
@@ -23,9 +45,11 @@ function TakeAssignment() {
       .then(res => {
         toast.success('Assignment Send Successfully')
         form.reset()
-    })
+      })
+    
     
   }
+ 
   return (
     <form onSubmit={handleAssignment} className='container mx-auto pt-10'>
       <input type="text" placeholder='PDF/Doc Link ' name="file" className='w-full  border p-3 rounded-lg border-gray-300' />

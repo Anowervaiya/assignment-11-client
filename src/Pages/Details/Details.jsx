@@ -42,8 +42,8 @@ function Details() {
               <p>Posted Date : {moment(item?.startDate).format('DD/MM/YYYY')}</p>
 
               <div className="card-actions justify-start ">
-                <Link
-                  to={'/TakeAssignment'}
+                <Link 
+                  to={`/TakeAssignment/${item?._id}`}
                   className="btn btn-outline btn-success"
                 >
                   Take Assignment

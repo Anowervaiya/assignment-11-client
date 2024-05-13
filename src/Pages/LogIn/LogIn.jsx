@@ -24,12 +24,10 @@ function LogIn() {
     SingInUser(email, password)
       .then(res => {
         toast.success('login successful')
-        console.log('login hoice');
          navigate('/');
       })
       .catch(error => {
-        console.log('login hoice na');
-        // toast.warning('Email or password is invalid');
+        toast.error('Email or password is invalid');
       });
 
    
