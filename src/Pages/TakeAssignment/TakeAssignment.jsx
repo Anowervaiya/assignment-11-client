@@ -23,23 +23,37 @@ function TakeAssignment() {
   
 
  if (!data) return <div>loading from take assignment .......</div>;
- const [datas] = data;
+  const [datas] = data;
+  console.log(datas);
  
   const handleAssignment = (e) => {
     e.preventDefault()
     const form = e.target;
     const PosterEmail = datas.UserEmail;
     const AssignmentName = datas.name;
-  
+  const TotalMarks = datas.Marks;
+
     const File = form.file.value;
     const UserEmail = user?.email;
     const UserName = user?.displayName;
     const UserPhoto = user?.photoURL
-    const note = form.note.value;
+    const note = form.note.rvalue;
     const status = 'pending';
-    const submit = { File, note, PosterEmail,AssignmentName,UserPhoto, UserEmail, UserName, status };
+    const submit = {
+      File,
+      note,
+      PosterEmail,
+      TotalMarks,AssignmentName,
+      UserPhoto,
+      UserEmail,
+      UserName,
+      status,
+    };
     if (!File || !note) {
       return toast.error('Please Choose a file')
+    }
+    if (user?.email == PosterEmail) {
+      return toast.error('You can not Take Your Assignment');
     }
     AxiosSecure.post('/submit', submit)
       .then(res => {

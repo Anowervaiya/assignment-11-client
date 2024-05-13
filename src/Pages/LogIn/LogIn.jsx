@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ContextAPI } from '../../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 
@@ -7,10 +7,12 @@ function LogIn() {
   const { SingInUser, GoogleLogin } = useContext(ContextAPI);
   const navigate = useNavigate();
 
+  const location = useLocation()
+
   const handleGoogleLogin = async () => {
     await GoogleLogin();
     toast.success('Account Created successfully');
-    navigate('/');
+    navigate(location.state ? location.state : '/');
   };
 
   const handleForm = e => {

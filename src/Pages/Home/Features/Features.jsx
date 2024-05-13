@@ -15,7 +15,14 @@ function Features() {
     });
   }, [])
   
-  if(!data) return <div>feature e data nai</div>
+  if (!data) {
+    return (
+      <div className="flex  justify-center items-center mt-16">
+        <span className="loading w-[50px] loading-spinner text-success"></span>;
+      </div>
+    );
+  }
+
 
   return (
     <div className="my-24">

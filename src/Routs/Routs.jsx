@@ -10,6 +10,8 @@ import TakeAssignment from "../Pages/TakeAssignment/TakeAssignment";
 import Update from "../Pages/Update/Update";
 import Pending from "../Pages/Pending/Pending";
 import Attempt from "../Pages/Attempt/Attempt";
+import GiveMarks from "../Pages/Give_Marks/GiveMarks";
+import PrivateRout from "../PrivateRout/PrivateRout";
 
 
 const router = createBrowserRouter([
@@ -31,11 +33,20 @@ const router = createBrowserRouter([
       },
       {
         path: '/Details/:id',
-        element: <Details></Details>,
+        element: (
+          <PrivateRout>
+            <Details></Details>
+          </PrivateRout>
+        ),
       },
       {
         path: '/CreateAssignment',
-        element: <CreateAssingmentMain></CreateAssingmentMain>,
+        element: (
+          <PrivateRout>
+            {' '}
+            <CreateAssingmentMain></CreateAssingmentMain>
+          </PrivateRout>
+        ),
       },
       {
         path: '/AllAssignment',
@@ -43,21 +54,45 @@ const router = createBrowserRouter([
       },
       {
         path: '/TakeAssignment/:id',
-        element: <TakeAssignment></TakeAssignment>,
-      
+        element: (
+          <PrivateRout>
+            <TakeAssignment></TakeAssignment>
+          </PrivateRout>
+        ),
       },
       {
         path: '/Update/:id',
-        element: <Update></Update>,
+        element: (
+          <PrivateRout>
+            <Update></Update>
+          </PrivateRout>
+        ),
       },
       {
         path: '/pending',
-        element:<Pending></Pending>
+        element: (
+          <PrivateRout>
+            {' '}
+            <Pending></Pending>
+          </PrivateRout>
+        ),
       },
       {
         path: '/attempt',
-        element:<Attempt></Attempt>
-      }
+        element: (
+          <PrivateRout>
+            <Attempt></Attempt>
+          </PrivateRout>
+        ),
+      },
+      {
+        path: '/GiveMarks/:id',
+        element: (
+          <PrivateRout>
+            <GiveMarks></GiveMarks>
+          </PrivateRout>
+        ),
+      },
     ],
   },
 ]);

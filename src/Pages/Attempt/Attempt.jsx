@@ -15,8 +15,20 @@ function Attempt() {
       .then(res => {
      setData(res.data);
     });
-  },[])
-if(!data) return <div>my attempt loading...</div>
+  }, [])
+
+ if (!data) {
+   return (
+     <div
+       className="
+        flex  justify-center items-center min-h-[calc(100vh-66px)]
+        "
+     >
+       <span className="loading w-[50px] loading-spinner text-success"></span>;
+     </div>
+   );
+  }
+  console.log(data);
   return (
     <section className="container px-4 mx-auto">
       <div className="flex flex-col mt-6">
@@ -31,7 +43,7 @@ if(!data) return <div>my attempt loading...</div>
                       className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     >
                       <button className="flex items-center gap-x-2">
-                        <span>Poster </span>
+                        <span>Assignment Name </span>
                       </button>
                     </th>
 
@@ -75,22 +87,9 @@ if(!data) return <div>my attempt loading...</div>
                       className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     >
                       <button className="flex items-center gap-x-2">
-                        <span>PDF/Doc Link</span>
+                        <span>Assignment Marks</span>
 
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="2"
-                          stroke="currentColor"
-                          className="w-4 h-4"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
-                          />
-                        </svg>
+                       
                       </button>
                     </th>
 
@@ -100,7 +99,13 @@ if(!data) return <div>my attempt loading...</div>
                       scope="col"
                       className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     >
-                      Given Marks
+                      Optain Marks
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                    >
+                      FeedBack
                     </th>
                   </tr>
                 </thead>
@@ -108,33 +113,20 @@ if(!data) return <div>my attempt loading...</div>
                   return (
                     <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                       <tr>
-                        <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                          <div className="inline-flex items-center gap-x-3">
-                            <div className="flex items-center gap-x-2">
-                              <img
-                                className="object-cover w-10 h-10 rounded-full"
-                                src={item?.UserPhoto}
-                                alt=""
-                              />
-                              <div>
-                                <h2 className="font-medium text-gray-800 dark:text-white ">
-                                  {item?.UserName}
-                                </h2>
-                              </div>
-                            </div>
-                          </div>
+                        <td className="px-4 py-4 text-sm font-medium text-white whitespace-nowrap">
+                          {item?.AssignmentName}
                         </td>
+                        {console.log(item)}
                         <td className="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                           <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                           
-
                             <h2
                               className={`
                               text-sm font-normal 
                                ${
-                                item?.Status == 'pending'  ? 'text-red-400'  :'text-emerald-400'                        
-                                  
-                                }
+                                 item?.Status == 'pending'
+                                   ? 'text-red-400'
+                                   : 'text-emerald-400'
+                               }
                               `}
                             >
                               {item?.Status}
@@ -142,11 +134,14 @@ if(!data) return <div>my attempt loading...</div>
                           </div>
                         </td>
                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          {item?.File}
+                          {item?.TotalMarks}
                         </td>
 
                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                          {item?.Mark?.Mark}
+                      {item?.Number}
+                        </td>
+                        <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+                          {item?.FeedBack}
                         </td>
                       </tr>
                     </tbody>

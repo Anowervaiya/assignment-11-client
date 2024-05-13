@@ -47,6 +47,9 @@ Swal.fire({
         }
        
       })
+      .catch(err => {
+      console.log('delete hocce na');
+    })
       
     
 

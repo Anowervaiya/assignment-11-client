@@ -10,10 +10,14 @@ import { ContextAPI } from '../AuthProvider/AuthProvider';
 
 
 const Navbar = props => {
-
+const navigate = useNavigate()
   const { user, loader, signInOut } = useContext(ContextAPI);
 
- 
+  const handlesignInOut = async () => {
+     await signInOut()
+
+    navigate('/')
+ }
   
   
 
@@ -99,7 +103,7 @@ const Navbar = props => {
                   <Link to={'/attempt'}>My Attempt Assignment</Link>
                 </li>
                 <li>
-                  <div onClick={signInOut}>Logout</div>
+                  <div onClick={handlesignInOut}>Logout</div>
                 </li>
               </ul>
             </div>
