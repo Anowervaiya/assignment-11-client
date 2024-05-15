@@ -178,7 +178,7 @@ const navigate = useNavigate()
               <input
                 type="submit"
                 value="Update Assignment"
-                className="btn btn-block"
+                className="btn btn-block btn-circle btn-success btn-outline "
               />
             </form>
           </div>

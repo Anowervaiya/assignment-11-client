@@ -6,31 +6,34 @@ import moment from 'moment'
 function FeatureCard({ item }) {
 
   return (
-    <div class="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md  ">
+    <div class="max-w-2xl overflow-hidden  dark:text-gray-400 border p-4 rounded-lg shadow-md  ">
       <img
-        class="object-cover w-full h-64"
+        class="object-cover w-full rounded-lg h-64"
         src={item?.thumbnail}
         alt="Article"
       />
 
-      <div class="p-6">
+      <div class="py-6">
         <div>
-          <span class="text-xs font-medium uppercase  text-blue-400 bg-blue-100 p-2 rounded-full">
+          <span class="text-xs font-medium uppercase  text-blue-400 bg-blue-100  p-2 rounded-full">
             {item?.difficulty}
           </span>
-          <div class="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform   hover:text-gray-600 ">
+          <div class="block mt-2 text-xl font-semibold  transition-colors duration-300 transform   dark:text-gray-400 ">
             {item?.name}
           </div>
-          <p class="mt-2 text-sm text-gray-600  ">{item?.description}</p>
+          <p class="mt-2 text-sm dark:text-gray-400  ">
+            {item?.description}
+          </p>
         </div>
 
         <div class="mt-4">
           <div class="flex items-center">
             <div class="flex items-center">
-              <h1 class="mx-2 font-semibold text-gray-700  ">{item?.Marsk}</h1>
-              <span class=" text-gray-600  ">
-               { moment(item?.startDate).format('DD/MM/YYYY')}
-               
+              <h1 class="mx-2 font-semibold dark:text-gray-400   ">
+                {item?.Marks}
+              </h1>
+              <span class=" dark:text-gray-400   ">
+                {moment(item?.startDate).format('DD/MM/YYYY')}
               </span>
             </div>
 

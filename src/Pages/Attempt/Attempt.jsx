@@ -46,6 +46,14 @@ function Attempt() {
                         <span>Assignment Name </span>
                       </button>
                     </th>
+                    <th
+                      scope="col"
+                      className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
+                    >
+                      <button className="flex items-center gap-x-2">
+                        <span>Preview </span>
+                      </button>
+                    </th>
 
                     <th
                       scope="col"
@@ -116,7 +124,14 @@ function Attempt() {
                         <td className="px-4 py-4 text-sm font-medium text-white whitespace-nowrap">
                           {item?.AssignmentName}
                         </td>
-                        {console.log(item)}
+                        <td className="px-4 py-4 text-sm font-medium text-white whitespace-nowrap">
+                          <iframe
+                            src={item?.File}
+                            frameborder="0"
+                            width="900"
+                            height="500"
+                          ></iframe>
+                        </td>
                         <td className="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                           <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
                             <h2
@@ -138,7 +153,7 @@ function Attempt() {
                         </td>
 
                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                      {item?.Number}
+                          {item?.Number}
                         </td>
                         <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                           {item?.FeedBack}

@@ -28,7 +28,7 @@ function Features() {
     <div className="my-24">
       <div className="w-3/4 mx-auto">
         <h1 className="text-center text-4xl font-semibold ">Features</h1>
-        <p className="text-gray-600 mt-4 mb-16 text-center">
+        <p className=" dark:text-gray-400  mt-4 mb-16 text-center">
           Here have some Feature . you can attempt any assingment and can get a
           reasonable marks
         </p>

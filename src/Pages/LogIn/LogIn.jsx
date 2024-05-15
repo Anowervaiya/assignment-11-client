@@ -2,37 +2,38 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ContextAPI } from '../../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 function LogIn() {
   const { SingInUser, GoogleLogin } = useContext(ContextAPI);
+  const AxiosSecure = useAxiosSecure();
   const navigate = useNavigate();
-
-  const location = useLocation()
+  const location = useLocation();
 
   const handleGoogleLogin = async () => {
-    await GoogleLogin();
-    toast.success('Account Created successfully');
+    const result = await GoogleLogin();
+    const user =await result?.user?.email;
+    await AxiosSecure.post('/jwt', { user });
     navigate(location.state ? location.state : '/');
+    toast.success('Google Login  successfully');
+    
   };
 
-  const handleForm = e => {
+  const handleForm = async e => {
     e.preventDefault();
     const form = e.target;
 
     const email = form.email.value;
     const password = form.password.value;
 
+    const result = await SingInUser(email, password);
+    const user = result.user.email;
+    await AxiosSecure.post('/jwt', { user });
 
-    SingInUser(email, password)
-      .then(res => {
-        toast.success('login successful')
-         navigate('/');
-      })
-      .catch(error => {
-        toast.error('Email or password is invalid');
-      });
+    toast.success('Login successfully');
+    navigate(location.state ? location.state : '/');
 
-   
+    
   };
 
   return (
@@ -47,8 +48,6 @@ function LogIn() {
         </div>
 
         <form className="mt-6" onSubmit={handleForm}>
-        
-   
           <div className="mt-4">
             <div className="flex items-center justify-between">
               <label

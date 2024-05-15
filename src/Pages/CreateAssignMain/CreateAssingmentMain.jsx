@@ -162,7 +162,7 @@ function CreateAssingmentMain() {
         <input
           type="submit"
           value="Add Assignment"
-          className="btn btn-block"
+          className="btn btn-block btn-outline btn-success"
         />
       </form>
     </div>

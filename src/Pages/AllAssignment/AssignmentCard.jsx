@@ -61,7 +61,7 @@ Swal.fire({
   };
 
   return (
-    <div class="max-w-2xl border border-gray-300 p-6 overflow-hidden bg-white rounded-lg shadow-md  ">
+    <div class="max-w-2xl border  border-gray-300 p-6 overflow-hidden  rounded-lg shadow-md  ">
       <img
         class="object-cover w-full rounded-lg h-64"
         src={item?.thumbnail}
@@ -73,20 +73,22 @@ Swal.fire({
           <span class="text-xs font-medium uppercase  text-blue-400 bg-blue-100 p-2 rounded-full">
             {item?.difficulty}
           </span>
-          <div class="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform   hover:text-gray-600 ">
+          <div class="block mt-2 text-xl font-semibold  transition-colors duration-300 transform dark:text-gray-600 text-black ">
             {item?.name}
           </div>
-          <p class="mt-2 text-sm text-gray-600  ">{item?.description}</p>
+          <p class="mt-2 text-black dark:text-gray-400 text-sm ">
+            {item?.description}
+          </p>
         </div>
 
         <div class="mt-4">
           <div class="flex items-center">
             <div class="flex items-center">
-              <h1 class=" mr-4 font-semibold text-gray-700  ">
+              <h1 class=" mr-4 font-semibold dark:text-gray-400   ">
                 {' '}
                 Marks : {item?.Marks}
               </h1>
-              <span class=" text-gray-600  ">
+              <span class="  dark:text-white">
                 {moment(item?.startDate).format('DD/MM/YYYY')}
               </span>
             </div>

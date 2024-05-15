@@ -6,7 +6,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   updateProfile,
-  getAuth,
+ 
 } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 
@@ -32,7 +32,6 @@ function AuthProvider({ children }) {
   };
 
   const SingInUser = (email, password) => {
-  setLoader(true)
     return signInWithEmailAndPassword(auth, email, password);
     
   };

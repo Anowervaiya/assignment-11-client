@@ -37,7 +37,7 @@ function TakeAssignment() {
     const UserEmail = user?.email;
     const UserName = user?.displayName;
     const UserPhoto = user?.photoURL
-    const note = form.note.rvalue;
+    const note = form.note.value;
     const status = 'pending';
     const submit = {
       File,
@@ -49,8 +49,9 @@ function TakeAssignment() {
       UserName,
       status,
     };
+    console.log(File);
     if (!File || !note) {
-      return toast.error('Please Choose a file')
+      return toast.error('Please Choose a file and note something')
     }
     if (user?.email == PosterEmail) {
       return toast.error('You can not Take Your Assignment');

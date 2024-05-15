@@ -12,6 +12,8 @@ import Pending from "../Pages/Pending/Pending";
 import Attempt from "../Pages/Attempt/Attempt";
 import GiveMarks from "../Pages/Give_Marks/GiveMarks";
 import PrivateRout from "../PrivateRout/PrivateRout";
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 
 const router = createBrowserRouter([
@@ -93,6 +95,14 @@ const router = createBrowserRouter([
           </PrivateRout>
         ),
       },
+      {
+        path: '/about',
+        element:<AboutUs></AboutUs>
+      },
+      {
+        path: '/contact',
+        element:<ContactUs></ContactUs>
+      }
     ],
   },
 ]);

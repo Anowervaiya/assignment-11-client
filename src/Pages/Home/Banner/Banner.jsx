@@ -21,12 +21,12 @@ export default function Banner() {
           <Fade direction="right">
             <img
               src="https://i.ibb.co/tQ8KfQD/photo-1581291518857-4e27b48ff24e.jpg"
-              className="w-[250px] md:w-[300px] rounded-lg flex-1"
+              className="w-[250px] hidden lg:block md:w-[300px] rounded-lg flex-1"
             />
           </Fade>
           <Fade direction="left">
             <div className="flex-1">
-              <h1 className="text-3xl lg:text-5xl  font-bold">
+              <h1 className="text-3xl dark:text-white lg:text-5xl  font-bold">
                 {' '}
                 <Typewriter
                   words={[
@@ -42,13 +42,13 @@ export default function Banner() {
                   loop={20}
                 />
               </h1>
-              <p className="py-6 ">
+              <p className="py-6 dark:text-white ">
                 Group study makes it easy for you to continue your study
                 conveniently <br /> and manage study for exam!
               </p>
               {/* buttons  */}
               <a
-                href="https://anowervaiya.github.io/cpa-lockers/"
+                
                 class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-white rounded-full shadow-md group"
               >
                 <span class="absolute inset-0 flex items-center justify-center w-full h-full text-black duration-300 -translate-x-full bg-cyan-100 group-hover:translate-x-0 ease">
@@ -67,7 +67,7 @@ export default function Banner() {
                     ></path>
                   </svg>
                 </span>
-                <span class="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease ">
+                <span class="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease dark:text-white ">
                   Learn More...
                 </span>
                 <span class="relative invisible  ">Learn More...</span>

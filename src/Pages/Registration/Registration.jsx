@@ -2,18 +2,22 @@ import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { ContextAPI } from '../../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 function Registration() {
   const { createUser, GoogleLogin, updatedProfile } = useContext(ContextAPI);
   const navigate = useNavigate()
-  
-  const handleGoogleLogin = async() => {
-    await GoogleLogin()
-    toast.success('Account Created successfully');
-    navigate('/')
 
-  }
-  const handleForm =  (e) => {
+  const AxiosSecure = useAxiosSecure()
+  
+  const handleGoogleLogin = async () => {
+    const result = await GoogleLogin();
+    const user = result?.user?.email;
+    await AxiosSecure.post('/jwt', { user });
+    toast.success('Google Login  successfully');
+    navigate('/');
+  };
+  const handleForm = async (e) => {
 e.preventDefault()
     const form = e.target;
     const name = form.name.value;
@@ -21,19 +25,13 @@ e.preventDefault()
     const password = form.password.value;
     const photo = form.photo.value;
   
-    createUser(email, password)
-      .then(res => {
-        updatedProfile(name, photo)
-          .then(res => {
-            toast.success('user Created Successfully');
-            navigate('/')
-          })
-          .catch(err => console.log('photo ase nai'));
-      })
-      .catch(error => {
-        console.log('user was created once ');
-        toast.warning('You have already an account');
-      });
+    const CreatedUser = await createUser(email, password)
+    const Email = await CreatedUser.user.email;
+    await updatedProfile(name, photo)
+    await AxiosSecure.post('/jwt', { Email })
+    navigate('/')
+    
+   
     
  
 }

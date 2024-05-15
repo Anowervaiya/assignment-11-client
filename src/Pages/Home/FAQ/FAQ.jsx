@@ -7,7 +7,7 @@ function FAQ() {
         <h1 className="text-center text-4xl font-semibold ">
           Frequently Asked Question
         </h1>
-        <p className="text-gray-600 mt-4 mb-16 text-center">
+        <p className="text-gray-600 dark:text-gray-400  mt-4 mb-16 text-center">
           Here have some Frequently asked question with answer
         </p>
       </div>

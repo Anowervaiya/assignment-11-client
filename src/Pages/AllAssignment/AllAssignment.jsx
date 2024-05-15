@@ -22,7 +22,9 @@ function AllAssignment() {
 
   const handleDifficulty = e => {
     const difficulty = e.target.value;
-
+    if (difficulty === 'difficulty') {
+  return setResult(data)
+}
    
       const Value = [...data].filter(item => item.difficulty == difficulty);
       setResult(Value);
@@ -51,7 +53,7 @@ function AllAssignment() {
           onChange={handleDifficulty}
           id=""
         >
-          <option> Difficulty</option>
+          <option value='difficulty'> Difficulty</option>
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
