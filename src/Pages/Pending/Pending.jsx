@@ -3,6 +3,7 @@ import { GoCheck } from 'react-icons/go';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
+import Loading from '../../Shared/Loading/Loading';
 
 function Pending() {
   const AxiosSecure = useAxiosSecure()
@@ -18,16 +19,7 @@ function Pending() {
   
 
  
-  if(isLoading || !data) {
-    return (
-      <div
-        className="
-        flex  justify-center items-center min-h-[calc(100vh-66px)]
-        ">
-        <span className="loading w-[50px] loading-spinner text-success"></span>;
-      </div>
-    );
-  }
+  if(isLoading || !data) return <Loading></Loading>
   return (
     <section class="container px-4 mx-auto">
       <div class="flex flex-col mt-6">

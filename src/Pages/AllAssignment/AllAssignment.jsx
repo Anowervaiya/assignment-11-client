@@ -2,6 +2,7 @@ import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import AssignmentCard from './AssignmentCard';
 import { useEffect, useState } from 'react';
+import Loading from '../../Shared/Loading/Loading';
 
 function AllAssignment() {
   const AxiosSecure = useAxiosSecure();
@@ -32,28 +33,19 @@ function AllAssignment() {
   };
 
 
-  if (isLoading || !result) {
-    return (
-      <div
-        className="
-        flex  justify-center items-center min-h-[calc(100vh-66px)]
-        "
-      >
-        <span className="loading w-[50px] loading-spinner text-success"></span>;
-      </div>
-    );
-  }
+  if (isLoading || !result) return <Loading></Loading>
 
   return (
     <>
-      <div className="text-center">
+      <div className="text-center bg-[url('https://i.ibb.co/ynSQ2Mq/1600w-j-Fs-A3-Dj-IRXM.webp')] py-16 bg-no-repeat bg-cover">
+       
         <select
           name="dropdown"
           className="w-1/2 text-center  focus:outline-2 focus:outline-gray-300 h-[50px] px-4 rounded-lg border border-gray-300"
           onChange={handleDifficulty}
           id=""
         >
-          <option value='difficulty'> Difficulty</option>
+          <option value="difficulty"> Difficulty</option>
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>

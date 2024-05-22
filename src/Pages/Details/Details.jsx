@@ -3,6 +3,7 @@ import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { Link, useParams } from 'react-router-dom';
 import moment from 'moment';
+import Loading from '../../Shared/Loading/Loading';
 
 function Details() {
   const AxiosSecure = useAxiosSecure()
@@ -19,13 +20,13 @@ function Details() {
   
   
   
-  if(isLoading) return <p>loddingg details....</p>
+  if(isLoading) return <Loading></Loading>
 
   return (
     <div className='container mx-auto'>
       {data.map(item => {
         return (
-          <div className="card  lg:h-[400px] lg:card-side bg-base-100 border p-6 shadow-xl">
+          <div className="card  border border-cyan-300 bg-gradient-to-r from-cyan-50 to-sky-100 lg:h-[400px] lg:card-side mt-12 mb-24 p-6 shadow-xl">
             <figure>
               <img
                 src={item?.thumbnail}
@@ -39,10 +40,12 @@ function Details() {
               <p>Posted Email : {item?.UserEmail}</p>
               <p>Difficulty : {item?.difficulty}</p>
               <p>Total Marks : {item?.Marks}</p>
-              <p>Posted Date : {moment(item?.startDate).format('DD/MM/YYYY')}</p>
+              <p>
+                Posted Date : {moment(item?.startDate).format('DD/MM/YYYY')}
+              </p>
 
               <div className="card-actions justify-start ">
-                <Link 
+                <Link
                   to={`/TakeAssignment/${item?._id}`}
                   className="btn btn-outline btn-success"
                 >

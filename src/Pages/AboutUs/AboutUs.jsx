@@ -6,9 +6,9 @@ import { IoIosBook } from 'react-icons/io';
 
 function AboutUs() {
   return (
-    <section className=" min-h-screen py-16 px-6  text-gray-800">
+    <section className=" min-h-screen py-16 px-6  ">
       <div className="container p-4 mx-auto space-y-1 text-center">
-        <h2 className="pb-3 text-3xl font-bold md:text-4xl">About Us</h2>
+        <h2 className="pb-3 text-3xl font-bold  md:text-4xl">About Us</h2>
         <p className="w-2/3 mx-auto text-gray-500 pb-16   text-xl">
           Welcome to our collaborative group study platform, where students
           unite to conquer academic challenges together. Our website facilitates

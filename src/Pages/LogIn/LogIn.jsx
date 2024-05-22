@@ -38,7 +38,7 @@ function LogIn() {
 
   return (
     <>
-      <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
+      <div className="w-full border border-cyan-300 max-w-sm p-6 m-auto mx-auto  rounded-lg shadow-md ">
         <div className="flex justify-center mx-auto">
           <img
             className="w-auto rounded-lg h-7 sm:h-16"
@@ -52,7 +52,7 @@ function LogIn() {
             <div className="flex items-center justify-between">
               <label
                 for="email"
-                className="block text-sm text-gray-800 dark:text-gray-200"
+                className="block text-sm "
               >
                 Email
               </label>
@@ -61,7 +61,7 @@ function LogIn() {
             <input
               type="email"
               name="email"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2  border rounded-lg  focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
 
@@ -69,7 +69,7 @@ function LogIn() {
             <div className="flex items-center justify-between">
               <label
                 for="password"
-                className="block text-sm text-gray-800 dark:text-gray-200"
+                className="block text-sm "
               >
                 Password
               </label>
@@ -78,14 +78,14 @@ function LogIn() {
             <input
               type="password"
               name="password"
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2  border rounded-lg focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
 
           <input
             type="submit"
             value={' Log In'}
-            className="w-full text-center cursor-pointer mt-6 px-6 py-2.5 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+            className="w-full text-center cursor-pointer mt-6 px-6 py-2.5 text-sm font-medium tracking-wide border  capitalize transition-colors duration-300 transform  rounded-lg focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
           />
         </form>
 

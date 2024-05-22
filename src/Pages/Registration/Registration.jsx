@@ -17,6 +17,9 @@ function Registration() {
     toast.success('Google Login  successfully');
     navigate('/');
   };
+
+
+  
   const handleForm = async (e) => {
 e.preventDefault()
     const form = e.target;
@@ -38,7 +41,7 @@ e.preventDefault()
 
   return (
     <>
-      <div className="w-full max-w-sm p-6 m-auto mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
+      <div className="w-full border border-cyan-300 max-w-sm p-6 m-auto mx-auto  rounded-lg shadow-md">
         <div className="flex justify-center mx-auto">
           <img
             className="w-auto rounded-lg h-7 sm:h-16"
@@ -51,27 +54,28 @@ e.preventDefault()
           <div>
             <label
               for="username"
-              className="block text-sm text-gray-800 dark:text-gray-200"
+              className="block text-sm  "
             >
               Username
             </label>
             <input
               type="text"
               name='name'
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2  border-2
+               rounded-lg  focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div>
             <label
               for="username"
-              className="block mt-4 text-sm text-gray-800 dark:text-gray-200"
+              className="block mt-4 text-sm "
             >
              Photo URL
             </label>
             <input
               type="url"
               name='photo'
-              className="block  w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block  w-full px-4 py-2 mt-2  border-2 rounded-lg  focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
 
@@ -79,7 +83,7 @@ e.preventDefault()
             <div className="flex items-center justify-between">
               <label
                 for="email"
-                className="block text-sm text-gray-800 dark:text-gray-200"
+                className="block text-sm "
               >
                 Email
               </label>
@@ -88,7 +92,7 @@ e.preventDefault()
             <input
               type="email"
               name='email'
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2  border-2 rounded-lg focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
 
@@ -96,7 +100,7 @@ e.preventDefault()
             <div className="flex items-center justify-between">
               <label
                 for="password"
-                className="block text-sm text-gray-800 dark:text-gray-200"
+                className="block text-sm "
               >
                 Password
               </label>
@@ -105,19 +109,22 @@ e.preventDefault()
             <input
               type="password"
               name='password'
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2   border-2 rounded-lg focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
 
           <input
             type='submit'
             value={' Sign Up'}
-            className="w-full text-center cursor-pointer mt-6 px-6 py-2.5 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+            className="w-full text-center cursor-pointer mt-6 px-6 py-2.5 text-sm font-medium tracking-wide capitalize transition-colors duration-300 transform  rounded-lbg-gradient-to-r from-sky-500 to-indigo-500g 
+            border-2 
+          
+            focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
           />
         </form>
 
         <div className="flex items-center justify-between mt-4">
-          <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/5"></span>
+          <span className="w-1/5 border-b  lg:w-1/5"></span>
 
           <a
             href="#"

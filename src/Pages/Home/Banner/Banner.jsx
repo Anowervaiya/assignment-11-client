@@ -7,50 +7,44 @@ export default function Banner() {
     <>
       {/*  */}
       <div
-        className=" hero  md:min-h-[80vh] "
+        className=" md:min-h-[80vh]  "
         style={{
-          background: `url('https://i.ibb.co/x2KssYF/education-background-with-books-ceiling-lamp-53876-115359.jpg')`,
+          background: `url('https://i.ibb.co/HgKCcZ6/mikolaj-DCzpr09c-TXY-unsplash.jpg')`,
           backgroundRepeat: 'no-repeat',
-
-          // backgroundPosition: 'center',
-          backgroundSize: 'cover', // Optional: Adjust background size as needed
-          // Optional: Adjust background position as needed
+          backgroundSize: 'cover',
+          backgroundPosition:'fixed'
         }}
       >
-        <div className="hero-content h-[80vh] flex-col lg:flex-row-reverse">
-          <Fade direction="right">
-            <img
-              src="https://i.ibb.co/tQ8KfQD/photo-1581291518857-4e27b48ff24e.jpg"
-              className="w-[250px] hidden lg:block md:w-[300px] rounded-lg flex-1"
-            />
+        <div className=" flex justify-center items-center flex-col h-[100vh]">
+          <Fade direction="left" duration={2000} delay={300}>
+            {' '}
+            <h1 className="text-3xl text-white lg:text-5xl  font-bold">
+              {' '}
+              <Typewriter
+                words={[
+                  'Write Your own assingment',
+                  'Write an assignment what you want ',
+                  'Write an assignment what you love ',
+                  'Write Your passionate assignment ',
+                ]}
+                cursor
+                cursorColor='blue'
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+                loop={20}
+              
+              />
+            </h1>
           </Fade>
-          <Fade direction="left">
-            <div className="flex-1">
-              <h1 className="text-3xl dark:text-white lg:text-5xl  font-bold">
-                {' '}
-                <Typewriter
-                  words={[
-                    'Write Your own assingment',
-                    'Write an assignment what you want ',
-                    'Write an assignment what you love ',
-                    'Write Your passionate assignment ',
-                  ]}
-                  cursor
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                  loop={20}
-                />
-              </h1>
-              <p className="py-6 dark:text-white ">
+          <Fade direction="left" delay={500} duration={2000}>
+            <div className="text-center">
+              <p className="py-6 w-[90vw] text-center text-white mx-auto ">
                 Group study makes it easy for you to continue your study
-                conveniently <br /> and manage study for exam!
+                conveniently and manage study for exam!
               </p>
               {/* buttons  */}
-              <a
-                
-                class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-white rounded-full shadow-md group"
-              >
+              <a class="relative cursor-pointer inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-white rounded-full shadow-md group">
                 <span class="absolute inset-0 flex items-center justify-center w-full h-full text-black duration-300 -translate-x-full bg-cyan-100 group-hover:translate-x-0 ease">
                   <svg
                     class="w-6 h-6"
@@ -67,7 +61,7 @@ export default function Banner() {
                     ></path>
                   </svg>
                 </span>
-                <span class="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease dark:text-white ">
+                <span class="absolute flex items-center justify-center w-full h-full text-black transition-all duration-300 transform group-hover:translate-x-full ease text-white ">
                   Learn More...
                 </span>
                 <span class="relative invisible  ">Learn More...</span>
