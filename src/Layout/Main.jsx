@@ -11,7 +11,7 @@ function Main() {
     return (
       <>
         <Navbar></Navbar>
-        <div className='min-h-[100vh]'>
+        <div className='min-h-[100vh] mt-[66px]'>
           <Outlet></Outlet>
         </div>
         <Footer></Footer>

@@ -41,7 +41,8 @@ e.preventDefault()
 
   return (
     <>
-      <div className="w-full border border-cyan-300 max-w-sm p-6 m-auto mx-auto  rounded-lg shadow-md">
+      <div className="w-full my-24
+       border border-cyan-300 max-w-sm p-6 m-auto mx-auto  rounded-lg shadow-md">
         <div className="flex justify-center mx-auto">
           <img
             className="w-auto rounded-lg h-7 sm:h-16"
@@ -116,7 +117,7 @@ e.preventDefault()
           <input
             type='submit'
             value={' Sign Up'}
-            className="w-full text-center cursor-pointer mt-6 px-6 py-2.5 text-sm font-medium tracking-wide capitalize transition-colors duration-300 transform  rounded-lbg-gradient-to-r from-sky-500 to-indigo-500g 
+            className="w-full text-center cursor-pointer hover:bg-cyan-50 rounded-lg mt-6 px-6 py-2.5 text-sm font-medium tracking-wide capitalize transition-colors duration-300 transform  rounded-lbg-gradient-to-r from-sky-500 to-indigo-500g 
             border-2 
           
             focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
@@ -137,7 +138,7 @@ e.preventDefault()
         </div>
 
         <div className="flex items-center mt-6 -mx-2">
-          <Link className="flex items-center w-full justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+          <Link className="flex items-center w-full justify-center mt-4 text-gray-700 hover:bg-cyan-100 transition-colors duration-300 transform border rounded-lg ">
             <div className="px-4 py-2">
               <svg className="w-6 h-6" viewBox="0 0 40 40">
                 <path

@@ -17,6 +17,7 @@ function Attempt() {
     });
   }, [])
 
+  console.log(data);
  if (!data) {
    return (
      <div

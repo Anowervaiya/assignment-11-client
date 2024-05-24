@@ -23,7 +23,7 @@ function Details() {
   if(isLoading) return <Loading></Loading>
 
   return (
-    <div className='container mx-auto'>
+    <div className='container my-24 mx-auto'>
       {data.map(item => {
         return (
           <div className="card  border border-cyan-300 bg-gradient-to-r from-cyan-50 to-sky-100 lg:h-[400px] lg:card-side mt-12 mb-24 p-6 shadow-xl">

@@ -51,7 +51,7 @@ function GiveMarks() {
  if (isLoading) return <div>loading from give marks .....</div>;
  
   return (
-    <div className="w-1/2 mx-auto">
+    <div className="w-1/2 my-24 mx-auto">
       <p className="text-xl">
         <span className="font-bold"> PDF/Doc Link</span> :{' '}
         <a href={SingleData?.File} className='hover:underline'>{SingleData?.File} </a>

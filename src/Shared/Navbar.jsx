@@ -55,7 +55,7 @@ const handleTheme = () => {
       </>
     );
   return (
-    <div className="navbar px-4">
+    <div className="navbar px-4 fixed top-0 bg-base-100 z-50 shadow-md">
       <div className="navbar-start ">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">
@@ -81,8 +81,15 @@ const handleTheme = () => {
             {list}
           </ul>
         </div>
-        <Link to={'/'} className="text-3xl mx-4 font-semibold">
-          Group Study{' '}
+        <Link to={'/'} className="text-2xl lg:text-4xl mx-4 font-semibold">
+          <span className="text-3xl lg:text-5xl font-extrabold text-cyan-600">
+            G
+          </span>
+          roup{' '}
+          <span className="text-3xl lg:text-5xl font-extrabold text-cyan-600">
+            S
+          </span>
+          tudy{' '}
         </Link>
       </div>
 
@@ -99,11 +106,8 @@ const handleTheme = () => {
                 className="btn btn-ghost btn-circle avatar"
               >
                 <div className="w-10 rounded-full">
-                  {console.log(user.photoURL,user)}
-                  <img
-                    alt="Wait"
-                    src={user?.photoURL}
-                  />
+                  {console.log(user.photoURL, user)}
+                  <img alt="Wait" src={user?.photoURL} />
                 </div>
               </div>
               <ul
@@ -123,8 +127,7 @@ const handleTheme = () => {
                         className="theme-controller"
                         value="synthwave"
                       />
-
-                    theme control
+                      theme control
                     </label>
                   </button>
                 </li>
