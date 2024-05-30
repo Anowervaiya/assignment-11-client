@@ -14,6 +14,9 @@ import GiveMarks from "../Pages/Give_Marks/GiveMarks";
 import PrivateRout from "../PrivateRout/PrivateRout";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import DailyRoutin from "../Pages/CreateRoutin/DailyRoutin";
+import MyRoutin from "../Pages/MyRoutin/MyRoutin";
+
 
 
 const router = createBrowserRouter([
@@ -26,15 +29,15 @@ const router = createBrowserRouter([
         element: <HomeMain></HomeMain>,
       },
       {
-        path: '/Registration',
+        path: 'Registration',
         element: <Registration></Registration>,
       },
       {
-        path: '/LogIn',
+        path: 'LogIn',
         element: <LogIn></LogIn>,
       },
       {
-        path: '/Details/:id',
+        path: 'Details/:id',
         element: (
           <PrivateRout>
             <Details></Details>
@@ -42,7 +45,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/CreateAssignment',
+        path: 'CreateAssignment',
         element: (
           <PrivateRout>
             {' '}
@@ -51,11 +54,11 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/AllAssignment',
+        path: 'AllAssignment',
         element: <AllAssignment></AllAssignment>,
       },
       {
-        path: '/TakeAssignment/:id',
+        path: 'TakeAssignment/:id',
         element: (
           <PrivateRout>
             <TakeAssignment></TakeAssignment>
@@ -63,7 +66,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/Update/:id',
+        path: 'Update/:id',
         element: (
           <PrivateRout>
             <Update></Update>
@@ -71,7 +74,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/pending',
+        path: 'pending',
         element: (
           <PrivateRout>
             {' '}
@@ -80,7 +83,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/attempt',
+        path: 'attempt',
         element: (
           <PrivateRout>
             <Attempt></Attempt>
@@ -88,7 +91,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/GiveMarks/:id',
+        path: 'GiveMarks/:id',
         element: (
           <PrivateRout>
             <GiveMarks></GiveMarks>
@@ -96,13 +99,29 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/about',
-        element:<AboutUs></AboutUs>
+        path: 'about',
+        element: <AboutUs></AboutUs>,
       },
       {
-        path: '/contact',
-        element:<ContactUs></ContactUs>
-      }
+        path: 'contact',
+        element: <ContactUs></ContactUs>,
+      },
+      {
+        path: 'dailyRoutin',
+        element: (
+          <PrivateRout>
+            <DailyRoutin></DailyRoutin>
+          </PrivateRout>
+        ),
+      },
+      {
+        path: 'myRoutin',
+        element: (
+          <PrivateRout>
+            <MyRoutin></MyRoutin>,
+          </PrivateRout>
+        ),
+      },
     ],
   },
 ]);

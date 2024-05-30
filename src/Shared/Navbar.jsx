@@ -50,6 +50,11 @@ const handleTheme = () => {
             <NavLink to={'/pending'}>Pending Assignment </NavLink>{' '}
           </li>
         )}
+        {user && (
+          <li>
+            <NavLink to={'dailyRoutin'}>Create Daily Routin </NavLink>{' '}
+          </li>
+        )}
         <li>{<NavLink to={'/about'}>About Us</NavLink>}</li>
         <li>{<NavLink to={'/contact'}>Contact Us</NavLink>}</li>
       </>
@@ -81,7 +86,7 @@ const handleTheme = () => {
             {list}
           </ul>
         </div>
-        <Link to={'/'} className="text-2xl lg:text-4xl mx-4 font-semibold">
+        <Link to={'/'} className="text-xl lg:text-2xl mx-4 font-semibold">
           <span className="text-3xl lg:text-5xl font-extrabold text-cyan-600">
             G
           </span>
@@ -116,6 +121,9 @@ const handleTheme = () => {
               >
                 <li>
                   <Link to={'/attempt'}>My Attempt Assignment</Link>
+                </li>
+                <li>
+                  <Link to={'myRoutin'}>My Routin</Link>
                 </li>
                 <li>
                   <button className="mr-4 mt-1">
